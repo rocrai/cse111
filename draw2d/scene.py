@@ -14,6 +14,9 @@ def main():
     # library which will open a window and create a canvas.
     canvas = start_drawing("Scene", scene_width, scene_height)
 
+    draw_sky(canvas,scene_width,scene_height)
+    draw_ground(canvas, scene_width, scene_height)
+
     # Call your drawing functions such
     # as draw_sky and draw_ground here.
 
@@ -27,6 +30,17 @@ def main():
 # Define your functions such as
 # draw_sky and draw_ground here.
 
+def draw_sky(canvas, scene_width, scene_height):
+    """Draw the sky and all the objects in the sky."""
+    draw_rectangle(canvas, 0, scene_height / 2.5,
+        scene_width, scene_height, width=0, fill="chocolate1")
+    draw_oval(canvas, 750, 490, 350, 150, fill="yellow2")
+    # draw_oval(canvas, 490, 490, 100, 100, fill="yellow2")
+    draw_oval(canvas, 100, 100, 300, 200, fill="pink")
+
+def draw_ground(canvas, scene_width, scene_height):
+    draw_rectangle(canvas, 0, 0,
+        scene_width, scene_height / 2.5, width=0, fill="dodgerblue1")
 
 
 # Call the main function so that
