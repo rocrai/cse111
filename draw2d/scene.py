@@ -37,11 +37,13 @@ def draw_sky(canvas, scene_width, scene_height):
         scene_width, scene_height, width=0, fill="chocolate1")
     draw_oval(canvas, 750, 490, 350, 150, width=0, fill="yellow2")
     # draw_oval(canvas, 490, 490, 100, 100, fill="yellow2")
-    draw_oval(canvas, 50, 50, 350, 300, width=0, fill='black')
-    draw_oval(canvas, -50, 50, 300, 300, width=0, fill='black')
+    draw_oval(canvas, 50, 50, 350, 300, width=0, fill='gray10')
+    draw_oval(canvas, -50, 50, 300, 300, width=0, fill='gray10')
+    draw_oval(canvas, 100, 50, 500, 300, width=0, fill='gray10')
     draw_oval(canvas, 50, 400, 300, 450, width=0, fill='ivory1')
     draw_oval(canvas, 0, 400, 200, 450, width=0, fill='ivory1')
     draw_oval(canvas, 300, 300, 600, 350, width=0, fill='ivory1')
+    draw_oval(canvas, 450, 400, 800, 450, width=0, fill='ivory1')
 
     
 
