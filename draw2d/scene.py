@@ -3,6 +3,7 @@
 from draw2d import \
     start_drawing, draw_line, draw_oval, draw_arc, \
     draw_rectangle, draw_polygon, draw_text, finish_drawing
+import random
 
 
 def main():
@@ -34,14 +35,58 @@ def draw_sky(canvas, scene_width, scene_height):
     """Draw the sky and all the objects in the sky."""
     draw_rectangle(canvas, 0, scene_height / 2.5,
         scene_width, scene_height, width=0, fill="chocolate1")
-    draw_oval(canvas, 750, 490, 350, 150, fill="yellow2")
+    draw_oval(canvas, 750, 490, 350, 150, width=0, fill="yellow2")
     # draw_oval(canvas, 490, 490, 100, 100, fill="yellow2")
-    draw_oval(canvas, 100, 100, 300, 200, fill="pink")
+    draw_oval(canvas, 50, 50, 350, 300, width=0, fill='black')
+    draw_oval(canvas, -50, 50, 300, 300, width=0, fill='black')
+    draw_oval(canvas, 50, 400, 300, 450, width=0, fill='ivory1')
+    draw_oval(canvas, 0, 400, 200, 450, width=0, fill='ivory1')
+    draw_oval(canvas, 300, 300, 600, 350, width=0, fill='ivory1')
+
+    
 
 def draw_ground(canvas, scene_width, scene_height):
-    draw_rectangle(canvas, 0, 0,
-        scene_width, scene_height / 2.5, width=0, fill="dodgerblue1")
-
+    draw_rectangle(canvas, 0, 0,scene_width, scene_height / 2.5, width=0, fill="dodgerblue1")
+    half_height = round(scene_height / 3)
+    min_diam = 15
+    max_diam = 30
+    for i in range(200):
+        x = random.randint(0, scene_width - max_diam)
+        y = random.randint(0, half_height)
+        diameter = random.randint(min_diam, max_diam)
+        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
+                fill="skyblue")
+    for i in range(50):
+        x = random.randint(0, scene_width - max_diam)
+        y = random.randint(0, half_height)
+        diameter = random.randint(min_diam, max_diam)
+        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
+                fill="dodgerblue1")
+    for i in range(50):
+        x = random.randint(0, scene_width - max_diam)
+        y = random.randint(0, half_height)
+        diameter = random.randint(min_diam, max_diam)
+        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
+                fill="steelblue1")
+    # for i in range(200):
+    #     x = random.randint(0, scene_width - max_diam)
+    #     y = random.randint(0, half_height)
+    #     diameter = random.randint(min_diam, max_diam)
+    #     draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
+    #             fill="dodgerblue1")
+    for i in range(50):
+        x = random.randint(0, scene_width - max_diam)
+        y = random.randint(0, half_height)
+        diameter = random.randint(min_diam, max_diam)
+        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
+                fill="skyblue")
+    for i in range(30):
+        x = random.randint(0, scene_width - max_diam)
+        y = random.randint(0, half_height)
+        diameter = random.randint(min_diam, max_diam)
+        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
+                fill="ivory1")
+        # draw_oval(canvas, 750, 240, 350, 0, width=0, fill="yellow2")
 
 # Call the main function so that
 # this program will start executing.
