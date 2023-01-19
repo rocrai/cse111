@@ -70,12 +70,6 @@ def draw_ground(canvas, scene_width, scene_height):
         diameter = random.randint(min_diam, max_diam)
         draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
                 fill="steelblue1")
-    # for i in range(200):
-    #     x = random.randint(0, scene_width - max_diam)
-    #     y = random.randint(0, half_height)
-    #     diameter = random.randint(min_diam, max_diam)
-    #     draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
-    #             fill="dodgerblue1")
     for i in range(50):
         x = random.randint(0, scene_width - max_diam)
         y = random.randint(0, half_height)
@@ -88,8 +82,6 @@ def draw_ground(canvas, scene_width, scene_height):
         diameter = random.randint(min_diam, max_diam)
         draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
                 fill="ivory1")
-        # draw_oval(canvas, 750, 240, 350, 0, width=0, fill="yellow2")
-
 # Call the main function so that
 # this program will start executing.
 main()
