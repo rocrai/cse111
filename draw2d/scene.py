@@ -17,6 +17,11 @@ def main():
 
     draw_sky(canvas,scene_width,scene_height)
     draw_ground(canvas, scene_width, scene_height)
+    draw_fish(canvas, 150, 150)
+    draw_fish2(canvas, 60, 80)
+    draw_fish1(canvas, 200, 110)
+    draw_fish2(canvas, 500, 90)
+    draw_fish(canvas, 600, 110)
 
     # Call your drawing functions such
     # as draw_sky and draw_ground here.
@@ -52,36 +57,42 @@ def draw_ground(canvas, scene_width, scene_height):
     half_height = round(scene_height / 3)
     min_diam = 15
     max_diam = 30
-    for i in range(200):
+    for i in range(100):
         x = random.randint(0, scene_width - max_diam)
         y = random.randint(0, half_height)
         diameter = random.randint(min_diam, max_diam)
         draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
                 fill="skyblue")
-    for i in range(50):
-        x = random.randint(0, scene_width - max_diam)
-        y = random.randint(0, half_height)
-        diameter = random.randint(min_diam, max_diam)
-        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
-                fill="dodgerblue1")
-    for i in range(50):
-        x = random.randint(0, scene_width - max_diam)
-        y = random.randint(0, half_height)
-        diameter = random.randint(min_diam, max_diam)
-        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
-                fill="steelblue1")
-    for i in range(50):
-        x = random.randint(0, scene_width - max_diam)
-        y = random.randint(0, half_height)
-        diameter = random.randint(min_diam, max_diam)
-        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
-                fill="skyblue")
-    for i in range(30):
-        x = random.randint(0, scene_width - max_diam)
-        y = random.randint(0, half_height)
-        diameter = random.randint(min_diam, max_diam)
-        draw_oval(canvas, x, y, x + diameter, y + diameter, width=0,
-                fill="ivory1")
+def draw_fish(canvas, peak_x, peak_y):
+    skirt_left  = peak_x - 40
+    skirt_right = peak_x - 10
+    skirt_bottom = peak_y - 40
+    trunk_left  = peak_x - 10
+    trunk_right = peak_x + 90
+    trunk_bottom = peak_y + 0
+    skirt_bottoms = peak_y - 50
+    draw_oval(canvas, trunk_left, trunk_bottom, trunk_right, skirt_bottoms, width=0, fill='saddlebrown')
+    draw_polygon(canvas, skirt_left, skirt_bottom, peak_x, peak_y,skirt_right, skirt_bottom, outline='saddlebrown', fill="saddlebrown")
+def draw_fish1(canvas, peak_x, peak_y):
+    skirt_left  = peak_x - 40
+    skirt_right = peak_x - 10
+    skirt_bottom = peak_y - 40
+    trunk_left  = peak_x - 10
+    trunk_right = peak_x + 90
+    trunk_bottom = peak_y + 0
+    skirt_bottoms = peak_y - 50
+    draw_oval(canvas, trunk_left, trunk_bottom, trunk_right, skirt_bottoms, width=0, fill='hotpink')
+    draw_polygon(canvas, skirt_left, skirt_bottom, peak_x, peak_y,skirt_right, skirt_bottom, outline='hotpink', fill="hotpink")
+def draw_fish2(canvas, peak_x, peak_y):
+    skirt_left  = peak_x - 40
+    skirt_right = peak_x - 10
+    skirt_bottom = peak_y - 40
+    trunk_left  = peak_x - 10
+    trunk_right = peak_x + 90
+    trunk_bottom = peak_y + 0
+    skirt_bottoms = peak_y - 50
+    draw_oval(canvas, trunk_left, trunk_bottom, trunk_right, skirt_bottoms, width=0, fill='yellow1')
+    draw_polygon(canvas, skirt_left, skirt_bottom, peak_x, peak_y,skirt_right, skirt_bottom, outline='yellow1', fill="yellow1")
 # Call the main function so that
 # this program will start executing.
 main()
