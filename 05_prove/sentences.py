@@ -136,7 +136,6 @@ def main():
     d =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, past)} {get_prepositional_phrase(2)}.')
     e =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, present)} {get_prepositional_phrase(2)}.')
     f =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, future)} {get_prepositional_phrase(2)}.')
-    phrase = get_prepositional_phrase(1)
     print(a)
     print(b)
     print(c)
