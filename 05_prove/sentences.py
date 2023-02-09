@@ -88,17 +88,55 @@ def get_verb(quantity, tense):
         "will walk", "will write"]
     verb = random.choice(verbs)
     return verb
+def get_preposition():
+    """Return a randomly chosen preposition
+    from this list of prepositions:
+        "about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"
+
+    Return: a randomly chosen preposition.
+    """
+    preposition = ["about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"]
+    preposition = random.choice(preposition)
+    return preposition
+def get_prepositional_phrase(quantity):
+    """Build and return a prepositional phrase composed
+    of three words: a preposition, a determiner, and a
+    noun by calling the get_preposition, get_determiner,
+    and get_noun functions.
+
+    Parameter
+        quantity: an integer that determines if the
+            determiner and noun in the prepositional
+            phrase returned from this function should
+            be single or pluaral.
+    Return: a prepositional phrase.
+    """
+    if quantity == 1:
+        phrase = (f'{get_preposition()} {get_determiner(1)} {get_noun(1)}')
+    else:
+        phrase = (f'{get_preposition()} {get_determiner(2)} {get_noun(2)}')
+    return phrase
 def main():
     past = 'past'
     present = 'present'
     future = 'future'
-    a =(f'{get_determiner(1)} {get_noun(1)} {get_verb(1, past)}.')
-    b =(f'{get_determiner(1)} {get_noun(1)} {get_verb(1, present)}.')
-    c =(f'{get_determiner(1)} {get_noun(1)} {get_verb(1, future)}.')
-    d =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, past)}.')
-    e =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, present)}.')
-    f =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, future)}.')
-
+    a =(f'{get_determiner(1)} {get_noun(1)} {get_verb(1, past)} {get_prepositional_phrase(1)}.')
+    b =(f'{get_determiner(1)} {get_noun(1)} {get_verb(1, present)} {get_prepositional_phrase(1)}.')
+    c =(f'{get_determiner(1)} {get_noun(1)} {get_verb(1, future)} {get_prepositional_phrase(1)}.')
+    d =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, past)} {get_prepositional_phrase(2)}.')
+    e =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, present)} {get_prepositional_phrase(2)}.')
+    f =(f'{get_determiner(2)} {get_noun(2)} {get_verb(2, future)} {get_prepositional_phrase(2)}.')
+    phrase = get_prepositional_phrase(1)
     print(a)
     print(b)
     print(c)
