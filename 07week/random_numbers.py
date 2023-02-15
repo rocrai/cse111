@@ -13,8 +13,5 @@ def append_random_numbers(numbers_list, quantity=1):
         x = round(x,1)
         numbers_list.append(x)
 
-# x = random.uniform(0,100)
-# x = round(x,1)
-# print(x)
 if __name__ == '__main__':
     main()
