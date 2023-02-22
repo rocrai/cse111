@@ -100,7 +100,12 @@ def print_death_age(people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    pass
+    print(f'Ages at Death')
+    for key, value in people_dict.items():
+        age = value[DEATH_YEAR_INDEX] - value[BIRTH_YEAR_INDEX]
+        print(f'{value[NAME_INDEX]} {age}')
+
+    
 
 
 def count_genders(people_dict):
@@ -113,7 +118,15 @@ def count_genders(people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    pass
+    male = 0
+    female = 0
+    for key, value in people_dict.items():
+        if value[GENDER_INDEX] == 'F':
+            female += 1
+        elif value[GENDER_INDEX] == 'M':
+            male += 1
+    print(f'Genders \nNumber of males: {male}\nNumber of females: {female}')
+
 
 
 def print_marriages(marriages_dict, people_dict):
@@ -130,7 +143,23 @@ def print_marriages(marriages_dict, people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    pass
+    print('Marriages')
+    for key, value in marriages_dict.items():
+        husbkey = value[HUSBAND_KEY_INDEX]
+        husbyear = value[WEDDING_YEAR_INDEX]
+        husbname = people_dict[husbkey]
+        husbage = people_dict[husbkey]
+        husbage = husbage[BIRTH_YEAR_INDEX]
+        husbage = husbyear - husbage
+        weddingyear = value[WEDDING_YEAR_INDEX]
+        wifekey = value[WIFE_KEY_INDEX]
+        wifeyear = value[WEDDING_YEAR_INDEX]
+        wifename = people_dict[wifekey]
+        wifeage = people_dict[wifekey]
+        wifeage = wifeage[BIRTH_YEAR_INDEX]
+        wifeage = wifeyear - wifeage
+        print(f'{husbname[0]} {husbage} > {weddingyear} < {wifename[0]} {wifeage}')
+        
 
 
 # If this file was executed like this:
