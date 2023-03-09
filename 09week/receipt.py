@@ -3,14 +3,14 @@ from datetime import datetime
 def main():
     KEY_INDEX = 0
     try:
-        products_dict = read_dictionary("09week/products.csv", KEY_INDEX)
+        products_dict = read_dictionary("products.csv", KEY_INDEX)
         current_date_and_time = datetime.now()
         print('Inkom Emporium')
         # print(products_dict)
         total_price = []
         request = []
         num_items = []
-        with open('09week/request.csv', 'rt') as request_file:
+        with open('request.csv', 'rt') as request_file:
             reader = csv.reader(request_file)
             next(reader)
             for item in reader:
