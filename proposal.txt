@@ -10,15 +10,17 @@ CSE 111 Proposal for a Student Chosen Program
     knowledge.)
 
 1. What is the title of your program?
-
+   - pandemic_simulation.py
 2. What real-world problem will your program address or help to solve?
-
+   - It will help people know the data on how pandemics are spread and maybe help people prevent the spread of the pandemic.
 3. What will you learn from developing this program?
-
+   - I will learn alot from this program. This program will most likely enhance the things that I currently know about python and maybe I will learn new things along the way.
 4. What Python modules will your program use?
 
     (Some examples are: csv, datetime, functools, matplotlib, math,
     pandas, pytest, random, requests, and tkinter.)
+
+    - I will probably use modules such as random, pytest, math, and maybe even datetime.
 
 5. Will you separate your Python program into functions that each
 perform a single task?
@@ -33,7 +35,10 @@ perform a single task?
     input and don't print results but instead have parameters and return
     a result. Therefore, you should write most of your program functions
     to have parameters and return a result.)
+    
+    -I will use functions in my program.
 
 6. Will you write test functions to test at least two of your program
 functions?
 
+    -I will write two test functions for my program.
